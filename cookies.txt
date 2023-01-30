@@ -1,6 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.youtube.com	TRUE	/	FALSE	1999999999	YSC	5TKQKtSK77E
-.youtube.com	TRUE	/	FALSE	1999999999	VISITOR_INFO1_LIVE	Kf4heaW0Aag
-www.youtube.com	TRUE	/	FALSE	1999999999	SameSite	none
-
