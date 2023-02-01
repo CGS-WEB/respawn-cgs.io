@@ -5,7 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <title>Respawn-CGS</title>
-  <!--Learn about open graphs and twiiter cards and apple touch-->
+  <script src="https://kit.fontawesome.com/873e684e9f.js" crossorigin="anonymous"></script>
+  <meta
+    content="Weglot allows you to make your Webflow website multilingual in minutes. Translate your Webflow site without coding. Promo site created by Finsweet."
+    name="description" />
+  <meta content="Weglot for Webflow" property="og:title" />
+  <meta
+    content="Weglot allows you to make your Webflow website multilingual in minutes. Translate your Webflow site without coding. Promo site created by Finsweet."
+    property="og:description" />
   <meta content="../assets/onlylogo.png" property="og:image" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/css/fs-wg4wf.webflow.f888da669.css" rel="stylesheet"
@@ -69,13 +76,136 @@
         pointer-events: none;
 
       }
+      .nav{
+        background: rgba(1, 1, 60, 0.8);
+      }
+      .nav ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 5px 25px;
+      }
+      
+      /*.nav ul  button{
+        position: relative;
+        text-align: center;
+        background-color: rgba(24, 21, 76, 0.866);
+        width: 200px;
+        padding: 10px;
+        font-size: 18px;
+        color: #15f4ee;
+        font-family: poppins;
+        font-weight: 400;
+        border: 5px solid #15f4ee;
+        letter-spacing: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 1.5s;
 
+      }
+      .nav ul  button :hover{
+        box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+      }*/
+
+      .nav ul .outer{
+        display: inline-block;
+        position: relative;
+        margin: 0 20px;
+        background: rgba(0,0,0.5,0.8);
+      }
+      .nav ul .button{
+        height: 50px;
+        width: 170px;
+        border-radius: 50px;
+      }
+      .nav ul .outer button, .outer span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .nav ul .outer button{
+        background: #111;
+        color: #f2f2f2;
+        outline: none;
+        border: none;
+        font-size: 15px;
+        z-index: 9;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+      .nav ul .button button{
+        height: 40px;
+        width: 160px;
+        border-radius: 50px;
+      }
+      .nav ul .outer span{
+        height: 100%;
+        width: 100%;
+        background: inherit;
+      }
+      .nav ul .button span{
+        border-radius: 50%;
+      }
+      .nav ul .outer :hover span:nth-child(1){
+        filter: blur(7px);
+      }
+      .nav ul .outer :hover span:nth-child(1){
+        filter: blur(14px);
+      }
+      .nav ul .outer:hover{
+        background: linear-gradient(#0011fa,#0011fa,#f2f2f2,#f2f2f2,#3295f1,#3295f1);
+        animation: rotate 1.5s linear step-end;
+      }
+      
+      .nav ul  li a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+      }
+      .nav ul  li a::after{
+        content: '';
+        width: 0;/*when not hovering then the line is 0*/
+        height: 3px;
+        background-color: #4144fb;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+      }
+      .nav ul  li a:hover::after{
+        width: 100%;
+      }
+      .nav ul .fa-solid{
+        display: none;
+      }
+      .nav .fa-solid{
+        display: none;
+      }
+      @keyframes rotate{
+        0%{
+          filter: hue-rotate(0deg);
+        }
+        100%{
+          filter: hue-rotate(360deg);
+        }
+      }
       @media screen and (max-height: 600px) {
 
         .nav {
           padding-top: 2rem;
+          background: rgba(1, 1, 60, 0.8);
         }
-
+        .nav ul .fa-solid{
+          display: none;
+        }
+        .nav .fa-solid{
+          display: none;
+        }
+        .nav .logo-wrapper weglot-exclude w-inline-block .logo-embed mb-tiny w-embed{
+          padding: 150px;
+        }
+        
         .p-huge {
           font-size: 2.5vw;
         }
@@ -92,10 +222,64 @@
           font-size: 3.5vw;
         }
 
-        .list-bullet-wrapper {
+        .list-bullet-wrapper {  
           height: 1.5rem;
           min-width: 1.5rem;
         }
+      }
+      @media screen and (max-width : 600px){
+        .nav {
+          padding-top: 2rem;
+          background: rgba(1, 1, 60, 0.8);
+        }
+
+        
+        .nav ul{
+          background: rgba(1, 1, 60, 0.8);
+          position: fixed;
+          top: 11vh;
+          right: -200px;
+          width: 200px;
+          height: 55vh;
+          padding-top: 30px;
+          z-index: 2;
+        }
+        
+        .nav ul li{
+
+          display: block;
+          margin: 25px;
+         
+        }
+        .nav ul .fa-solid{
+          position: absolute;
+          display: block;
+          top: -5vh;
+          right: 20px;
+          font-size: 30px;
+          
+        }
+        .nav .fa-solid {
+          position: absolute;
+          display: block;
+          right: 20px;
+          font-size: 30px;
+        }
+      
+        .nav ul .button{
+          position: absolute;
+          left: 5px;
+          height: 37px;
+          width: 150px;
+          border-radius: 50px;
+        }
+        .nav ul .button button{
+          height: 27px;
+          width: 140px;
+          border-radius: 50px;
+        }
+        
+      }
     </style>
   </div>
   <div data-w-id="4f4dc387-c1ab-f442-56b8-659c38a6db07" style="opacity:0" class="progress-bar-wrapper">
@@ -248,13 +432,32 @@
       <div class="logo-embed mb-tiny w-embed">
         <img src="/assets/respawnlogo3.png">
       </div>
-      <div style="color:rgb(24,21,76)" class="logo-wrapper-webflow">
+      
+      <div style="color:rgba(24, 21, 76, 0.866)" class="logo-wrapper-webflow">
         <div class="mr-tiny"></div>
         <div class="logo-embed w-embed">
         </div>
       </div>
+      
     </a>
-
+    
+    <ul id="sidemenu">
+      
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Sponsors</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+      <div class="outer button">
+        <button>Register</button>
+        <span></span>
+        <span></span>
+      </div>
+      <i class="fa-solid fa-xmark" onclick="closemenu()" style="color: #f2f2f2;"></i>
+                
+    </ul>
+    
+    <i class="fa-solid fa-bars" id="bars" onclick="openmenu()" style="color: #f2f2f2;"></i>
   </nav>
   <div class="main-content">
     <div data-w-id="2538c5ea-c935-fdfe-1ed4-78c9c9895167" class="scene-1">
@@ -1021,32 +1224,24 @@
                   <div class="section-title-uni p-huge p-bold mb-0">TESTIMONIALS</div>
 
                 </div>
-                <div
-                  style="-webkit-transform:translate3d(0, 0REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:1"
-                  class="weglot-is-desc de1">
-                  <div class="p-large">Company Name <br> Designation</div>
-                </div>
+                
                 <div
                   style="-webkit-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);display:none;opacity:0"
                   class="weglot-is-desc de2">
                   <!-- <div class="p-large mb-small">Everything on your website is detected and translated instantly.</div> -->
-                  <div class="p-large">Company Name2 <br> Designation</div>
+                  <div class="p-large">Company Name1 <br> Designation</div>
                 </div>
                 <div
                   style="-webkit-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);display:none;opacity:0"
                   class="weglot-is-desc de3">
-                  <div class="p-large">Company Name3 <br> Designation</div>
+                  <div class="p-large">Company Name2 <br> Designation</div>
                 </div>
                 <div
                   style="-webkit-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);display:none;opacity:0"
                   class="weglot-is-desc de4">
-                  <div class="p-large">Company Name4 <br> Designation</div>
+                  <div class="p-large">Company Name3 <br> Designation</div>
                 </div>
-                <div
-                  style="-webkit-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 2REM, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);display:none;opacity:0"
-                  class="weglot-is-desc de5">
-                  <div class="p-large">Company Name5 <br> Designation</div>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -1074,20 +1269,9 @@
                   <div class="weglot-ill-col ill">
                     <div class="weglot-ill">
                       <div class="weglot-ill-1 ob1"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc5bf08c8697d_ill-weglotis-1-4.svg"
+                          src="/assets/background_new.jpeg"
                           alt="" class="svg" /></div>
-                      <div class="weglot-ill-1 ob2"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc5746dc86968_ill-weglotis-1-2.svg"
-                          alt="" class="svg" /></div>
-                      <div class="weglot-ill-1 obj3"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc58073c8697a_ill-weglotis-1-1.svg"
-                          alt="" class="svg" /></div>
-                      <div class="weglot-ill-1 obj5"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc56e5dc86963_ill-weglotis-1-3.svg"
-                          alt="" class="svg" /></div>
-                      <div class="weglot-ill-1 obj4"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e38984e3866b870cc2a4bd7_ill-nocode.svg"
-                          alt="" class="svg" /></div>
+                      
                     </div>
                   </div>
                 </div>
@@ -1107,7 +1291,7 @@
                   <div class="weglot-ill-col ill">
                     <div class="weglot-ill">
                       <div class="weglot-ill-2 ob1"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc563b9c86998_ill-weglotis-2-5.svg"
+                          src="/assets/user.png"
                           alt="" class="svg" /></div>
                       <div class="weglot-ill-2 ob2"><img
                           src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc5ff67c86976_ill-weglotis-2-3.svg"
@@ -1143,7 +1327,7 @@
                   <div class="weglot-ill-col ill">
                     <div class="weglot-ill">
                       <div class="weglot-ill-3 ob1"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc543c2c8698c_ill-weglotis-3-4.svg"
+                          src="/assets/user.png"
                           alt="" class="svg" /></div>
                       <div class="weglot-ill-3 ob2"><img
                           src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc5918dc86991_ill-weglotis-3-5_1.svg"
@@ -1173,7 +1357,7 @@
                   <div class="weglot-ill-col ill">
                     <div class="weglot-ill">
                       <div class="weglot-ill-4 ob1"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc56e51c86989_ill-weglotis-4-4.svg"
+                          src="/assets/user.png"
                           alt="" class="svg" /></div>
                       <div class="weglot-ill-4 ob2"><img
                           src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc558bdc8696d_ill-weglotis-4-3.svg"
@@ -1189,60 +1373,7 @@
                 </div>
               </div>
             </div>
-            <div class="half-page is">
-              <div data-w-id="7d45371a-c73e-b3a8-9b0a-eef95bf9c243" class="weglot-is-ill-wrapper iw5">
-                <div class="weglot-is-ll-row">
-                  <div class="weglot-ill-col">
-                    <div class="p-huge p-bold mb-normal">Name Title</div>
-                    <div class="flex-h-as-js">
-                      <div class="p-large lh12">loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum
-                        ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum loreum ipsum
-                        loreum ipsum loreum ipsum loreum ipsum </div>
-                    </div>
-                  </div>
-                  <div class="weglot-ill-col ill">
-                    <div class="weglot-ill">
-                      <div class="weglot-ill-5 ob1">
-                        <div data-w-id="3288c8b1-ba2c-a5b2-dca4-a574ae239cd1" class="weglot-ill-dropdown">
-                          <div style="border-color:rgb(24,21,76)" class="webflow-ill-dd-link ddl1">
-                            <div>EN</div>
-                            <div class="ico arrow-dd w-embed"><svg viewBox="0 0 16 16">
-                                <path fill="CurrentColor"
-                                  d="M7.37 10.72a1 1 0 0 1 0-1.36l4-4.08a.94.94 0 0 1 1.33 0 1 1 0 0 1 0 1.36l-4 4.08a1 1 0 0 1-1.33 0z" />
-                                <path fill="CurrentColor"
-                                  d="M3.28 5.28a.94.94 0 0 1 1.33 0l4.1 4.08a1 1 0 0 1 0 1.36 1 1 0 0 1-1.34 0L3.28 6.64a1 1 0 0 1 0-1.36z" />
-                              </svg></div>
-                          </div>
-                          <div class="webflow-ill-dd-link ddl2">
-                            <div>FR</div>
-                          </div>
-                          <div class="webflow-ill-dd-link ddl2">
-                            <div>DE</div>
-                          </div>
-                          <div class="webflow-ill-dd-link ddl2">
-                            <div>RU</div>
-                          </div>
-                          <div class="webflow-ill-dd-link ddl2">
-                            <div>ES</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div style="background-color:rgba(255,255,255,0.1)" class="weglot-ill-5 ob2"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc50929c8698f_ill-weglotis-5-1.svg"
-                          style="opacity:0;-webkit-transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                          alt="" class="svg ill1" /></div>
-                      <div style="background-color:rgba(255,255,255,0.1)" class="weglot-ill-5 ob3"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc54711c8697f_ill-weglotis-5-2.svg"
-                          style="-webkit-transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 5VH, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                          alt="" class="svg ill2" /></div>
-                      <div class="weglot-ill-5 ob4 no-events"><img
-                          src="../assets.website-files.com/5e3884b717ebc5d2e8c8691b/5e3884b717ebc5394ec8696a_ill-weglotis-2-6.svg"
-                          alt="" class="svg" /></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
           <div data-w-id="d17b06a8-b8ee-7042-c0fc-820d83e0af48" class="ix-scroll-prompt"></div>
         </div>
@@ -1814,6 +1945,20 @@
       })
     });
 
+  </script>
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+    var cross = document.getElementById("bars");
+    function openmenu(){
+      
+      sidemenu.style.right="0";
+      cross.style.display="none";
+    }
+    function closemenu(){
+      sidemenu.style.right="-200px";
+      if(screen.width <= 600 )cross.style.display="block";
+      else cross.style.display="none";
+    }
   </script>
 </body>
 
